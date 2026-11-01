@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>The Nest - Registrazione (Step 2)</title>
+</head>
+<body>
+    <h2>Completa il tuo profilo (2/2)</h2>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+        
+        <label>Bio (raccontati brevemente):</label><br>
+        <textarea name="bio" rows="4" cols="30"></textarea><br><br>
+        
+        <button type="submit">Completa Registrazione</button>
+    </form>
+</body>
+</html>
