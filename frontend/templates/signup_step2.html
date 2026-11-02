@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>The Nest - Registrazione (Step 2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>Completa il tuo profilo (2/2)</h2>
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
-    <form method="POST">
-        <label>Username:</label><br>
-        <input type="text" name="username" required><br><br>
+<body class="bg-slate-950 text-slate-100 flex items-center justify-center min-h-screen">
+    <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold tracking-tight text-indigo-400">The Nest</h1>
+            <p class="text-sm text-slate-400 mt-2">Completa il tuo profilo (Step 2 di 2)</p>
+        </div>
         
-        <label>Bio (raccontati brevemente):</label><br>
-        <textarea name="bio" rows="4" cols="30"></textarea><br><br>
-        
-        <button type="submit">Completa Registrazione</button>
-    </form>
+        {% if error %}
+            <div class="mb-4 p-3 bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-lg text-center">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form method="POST" class="space-y-5">
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Username</label>
+                <input type="text" name="username" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 transition">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Bio</label>
+                <textarea rows="3" name="bio" placeholder="Raccontati brevemente..." class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 transition resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-600/20 transition duration-200">
+                Completa Registrazione
+            </button>
+        </form>
+    </div>
 </body>
 </html>

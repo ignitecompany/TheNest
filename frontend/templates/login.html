@@ -2,22 +2,39 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>The Nest - Login</title>
+    <title>The Nest - Accedi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>Accedi a The Nest</h2>
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
-    <form method="POST">
-        <label>Username o Email:</label><br>
-        <input type="text" name="identifier" required><br><br>
+<body class="bg-slate-950 text-slate-100 flex items-center justify-center min-h-screen">
+    <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold tracking-tight text-indigo-400">The Nest</h1>
+            <p class="text-sm text-slate-400 mt-2">Accedi alla piattaforma per creator</p>
+        </div>
         
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+        {% if error %}
+            <div class="mb-4 p-3 bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-lg text-center">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form method="POST" class="space-y-5">
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Username o Email</label>
+                <input type="text" name="identifier" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 transition">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Password</label>
+                <input type="password" name="password" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 transition">
+            </div>
+            <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-600/20 transition duration-200">
+                Accedi
+            </button>
+        </form>
         
-        <button type="submit">Accedi</button>
-    </form>
-    <p>Non hai un account? <a href="{{ url_for('signup_step1') }}">Registrati</a></p>
+        <p class="text-center text-sm text-slate-400 mt-6">
+            Non hai un account? <a href="{{ url_for('signup_step1') }}" class="text-indigo-400 hover:underline font-medium">Registrati</a>
+        </p>
+    </div>
 </body>
 </html>
