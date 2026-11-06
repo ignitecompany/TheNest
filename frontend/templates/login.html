@@ -5,36 +5,56 @@
     <title>The Nest - Accedi</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 flex items-center justify-center min-h-screen">
-    <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4">
-        <div class="text-center mb-8">
-            <h1 class="text-3xl font-extrabold tracking-tight text-indigo-400">The Nest</h1>
-            <p class="text-sm text-slate-400 mt-2">Accedi alla piattaforma per creator</p>
-        </div>
-        
-        {% if error %}
-            <div class="mb-4 p-3 bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-lg text-center">
-                {{ error }}
-            </div>
-        {% endif %}
+<body class="bg-slate-950 text-slate-100 min-h-screen flex">
 
-        <form method="POST" class="space-y-5">
-            <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Username o Email</label>
-                <input type="text" name="identifier" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 transition">
-            </div>
-            <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Password</label>
-                <input type="password" name="password" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 transition">
-            </div>
-            <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-600/20 transition duration-200">
-                Accedi
-            </button>
-        </form>
-        
-        <p class="text-center text-sm text-slate-400 mt-6">
-            Non hai un account? <a href="{{ url_for('signup_step1') }}" class="text-indigo-400 hover:underline font-medium">Registrati</a>
-        </p>
+    <!-- Sezione Branding / Loghi (Sinistra) -->
+    <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-indigo-900 via-slate-900 to-slate-950 p-12 flex-col justify-between relative overflow-hidden border-r border-slate-800">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div>
+            <span class="text-indigo-400 font-bold tracking-wider uppercase text-sm">Social Platform</span>
+        </div>
+        <div class="space-y-4 z-10">
+            <h1 class="text-5xl font-extrabold tracking-tight text-white">The Nest</h1>
+            <p class="text-slate-400 text-lg max-w-md">Il punto d'incontro definitivo per creator, developer e visionari. Trova il tuo team e dai vita al tuo prossimo grande progetto.</p>
+        </div>
+        <div class="text-xs text-slate-500">
+            &copy; 2026 The Nest. Tutti i diritti riservati.
+        </div>
     </div>
+
+    <!-- Sezione Form di Login (Destra) -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+        <div class="w-full max-w-md space-y-8 bg-slate-900/50 p-8 rounded-3xl border border-slate-800/80 backdrop-blur-xl shadow-2xl transition-all duration-500">
+            <div class="text-center lg:text-left">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Bentornato</h2>
+                <p class="text-sm text-slate-400 mt-1">Inserisci le tue credenziali per accedere</p>
+            </div>
+            
+            {% if error %}
+                <div class="p-4 bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-2xl text-center">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <form method="POST" class="space-y-5">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Username o Email</label>
+                    <input type="text" name="identifier" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-2xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Password</label>
+                    <input type="password" name="password" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-2xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 transition">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-2xl shadow-lg shadow-indigo-600/25 transition duration-200">
+                    Accedi
+                </button>
+            </form>
+            
+            <p class="text-center text-sm text-slate-400">
+                Non hai un account? <a href="{{ url_for('signup_step1') }}" class="text-indigo-400 hover:underline font-medium">Registrati</a>
+            </p>
+        </div>
+    </div>
+
 </body>
 </html>

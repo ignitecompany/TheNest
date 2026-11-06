@@ -24,8 +24,8 @@ services:
     volumes:
       - ./backend:/app    
       - ./frontend:/frontend   
-    environment:
-      - DATABASE_URL=mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${MYSQL_DATABASE}
+    env_file:
+      - .env
     depends_on:
       - db
 
