@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Verifica la tua email - The Nest</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #030712; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #f3f4f6;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+        <!-- Logo e Intestazione -->
+        <tr>
+            <td align="center" style="padding-bottom: 30px;">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" style="background-color: #4f46e5; width: 44px; height: 44px; border-radius: 12px; color: #ffffff; font-weight: bold; font-size: 22px;">N</td>
+                        <td style="padding-left: 12px; font-size: 22px; font-weight: bold; color: #ffffff; letter-spacing: 0.05em;">The Nest</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Card Contenuto -->
+        <tr>
+            <td style="background-color: #111827; border: 1px solid #1f2937; border-radius: 24px; padding: 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td style="font-size: 22px; font-weight: bold; color: #ffffff; padding-bottom: 16px;">Codice di verifica</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 15px; color: #9ca3af; line-height: 1.6; padding-bottom: 24px;">
+                            Ciao! Grazie per aver scelto di unire le forze su <strong>The Nest</strong>. Per completare la registrazione del tuo account, inserisci il codice di verifica qui sotto:
+                        </td>
+                    </tr>
+                    <!-- Box Codice OTP -->
+                    <tr>
+                        <td align="center" style="padding: 10px 0 20px 0;">
+                            <div style="background-color: #030712; border: 1px solid #374151; border-radius: 16px; padding: 16px 32px; display: inline-block; font-family: monospace; font-size: 32px; font-weight: bold; letter-spacing: 8px; color: #818cf8;">
+                                {{ otp_code }}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 14px; color: #9ca3af; line-height: 1.6; padding-top: 16px; border-top: 1px solid #1f2937;">
+                            Il codice è valido per 10 minuti. Se non hai richiesto tu la registrazione, puoi ignorare tranquillamente questa email.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Footer -->
+        <tr>
+            <td align="center" style="padding-top: 30px; font-size: 12px; color: #6b7280;">
+                &copy; 2026 The Nest. Tutti i diritti riservati.
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

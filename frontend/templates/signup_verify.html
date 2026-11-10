@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>The Nest - Verifica Email</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex">
+
+    <!-- Sezione Form di Verifica (Sinistra) -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+        <div class="w-full max-w-md space-y-8 bg-slate-900/50 p-8 rounded-3xl border border-slate-800/80 backdrop-blur-xl shadow-2xl">
+            <div class="space-y-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-2xl flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-600/30">N</div>
+                    <span class="text-xl font-bold tracking-wider text-white">The Nest</span>
+                </div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Step 2 di 3</span>
+                <h2 class="text-3xl font-bold tracking-tight text-white">Verifica la tua email</h2>
+                <p class="text-sm text-slate-400">Abbiamo inviato un codice a 6 cifre al tuo indirizzo email.</p>
+            </div>
+            
+            {% if error %}
+                <div class="p-4 bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-2xl text-center">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <form method="POST" class="space-y-5">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Codice OTP</label>
+                    <input type="text" name="otp_code" required maxlength="6" placeholder="123456" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-2xl focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-600 tracking-widest text-center text-xl font-mono transition">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-2xl shadow-lg shadow-indigo-600/25 transition duration-200">
+                    Verifica Codice
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Branding (Destra) -->
+    <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-bl from-indigo-900 via-slate-900 to-slate-950 p-12 flex-col justify-between relative overflow-hidden border-l border-slate-800">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="text-right">
+            <span class="text-indigo-400 font-bold tracking-wider uppercase text-sm">Sicurezza Avanzata</span>
+        </div>
+        <div class="space-y-4 z-10 text-right">
+            <h1 class="text-5xl font-extrabold tracking-tight text-white">Proteggiamo il tuo profilo.</h1>
+            <p class="text-slate-400 text-lg max-w-md ml-auto">La verifica via email garantisce che solo tu possa accedere al tuo account e iniziare a collaborare.</p>
+        </div>
+        <div class="text-xs text-slate-500 text-right">
+            &copy; 2026 The Nest. Tutti i diritti riservati.
+        </div>
+    </div>
+
+</body>
+</html>
